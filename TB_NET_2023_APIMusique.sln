@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TB_NET_2023_APIMusique", "TB_NET_2023_APIMusique\TB_NET_2023_APIMusique.csproj", "{6BEEA786-5FF3-45CD-A499-E07A0636A213}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TB_NET_2023_APIMusique.BLL", "TB_NET_2023_APIMusique.BLL\TB_NET_2023_APIMusique.BLL.csproj", "{BF1552E9-EE54-4A88-A3BF-2426672F5767}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TB_NET_2023_APIMusique.DAL", "TB_NET_2023_APIMusique.DAL\TB_NET_2023_APIMusique.DAL.csproj", "{1716FF61-468D-4973-9335-C29F5165FE2A}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "TB_NET_2023_APIMusique.Database", "TB_NET_2023_APIMusique.Database\TB_NET_2023_APIMusique.Database.sqlproj", "{DAAC2C60-A009-44CD-962F-C670D4F53D17}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TB_NET_2023_APIMusique.Tools", "TB_NET_2023_APIMusique.Tools\TB_NET_2023_APIMusique.Tools.csproj", "{8BD0F82E-8692-4769-99A0-74325E4C26B3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6BEEA786-5FF3-45CD-A499-E07A0636A213}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BEEA786-5FF3-45CD-A499-E07A0636A213}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BEEA786-5FF3-45CD-A499-E07A0636A213}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BEEA786-5FF3-45CD-A499-E07A0636A213}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF1552E9-EE54-4A88-A3BF-2426672F5767}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF1552E9-EE54-4A88-A3BF-2426672F5767}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF1552E9-EE54-4A88-A3BF-2426672F5767}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF1552E9-EE54-4A88-A3BF-2426672F5767}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1716FF61-468D-4973-9335-C29F5165FE2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1716FF61-468D-4973-9335-C29F5165FE2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1716FF61-468D-4973-9335-C29F5165FE2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1716FF61-468D-4973-9335-C29F5165FE2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAAC2C60-A009-44CD-962F-C670D4F53D17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAAC2C60-A009-44CD-962F-C670D4F53D17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAAC2C60-A009-44CD-962F-C670D4F53D17}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{DAAC2C60-A009-44CD-962F-C670D4F53D17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAAC2C60-A009-44CD-962F-C670D4F53D17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAAC2C60-A009-44CD-962F-C670D4F53D17}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{8BD0F82E-8692-4769-99A0-74325E4C26B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BD0F82E-8692-4769-99A0-74325E4C26B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BD0F82E-8692-4769-99A0-74325E4C26B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BD0F82E-8692-4769-99A0-74325E4C26B3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4B8D7E61-FA7A-4C92-B2AA-2410026592AC}
+	EndGlobalSection
+EndGlobal
