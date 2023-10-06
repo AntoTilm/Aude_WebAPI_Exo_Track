@@ -4,11 +4,10 @@ using System.Data.Common;
 using System.Data;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using TB_NET_2023_APIMusique.DAL.Entities;
 using TB_NET_2023_APIMusique.DAL.Interfaces;
-using System.Security.Cryptography;
 using TB_NET_2023_APIMusique.Tools.Utils;
+using Microsoft.Identity.Client;
 
 namespace TB_NET_2023_APIMusique.DAL.Repositories
 {
@@ -28,7 +27,7 @@ namespace TB_NET_2023_APIMusique.DAL.Repositories
                 Id = (int)record["Id_ARTIST"],
                 Name = (string)record["NAME"],
                 Birthdate = (DateTime)record["BIRTH_DATE"],
-                Deathdate = record["DEATH_DATE"] == DBNull.Value ? null : (DateTime)record["DEATH_DATE"]
+                Deathdate = record["DEATH_DATE"] is DBNull ? null : (DateTime)record["DEATH_DATE"]
             };
         }
 
@@ -125,6 +124,30 @@ namespace TB_NET_2023_APIMusique.DAL.Repositories
                 _DbConnection.Close();
                 return nbRowDeleted == 1;
             };
+        }
+
+        public bool IsSingingOnTrack(int id)
+        {
+            bool isSinging = false;
+
+            using (DbCommand command = _DbConnection.CreateCommand())
+            {
+                command.CommandText = "SELECT * FROM [Track_Artist] WHERE [ARTIST_ID] = @Id";
+                command.addParamWithValue("Id", id);
+
+                _DbConnection.Open();
+                using ( DbDataReader reader = command.ExecuteReader())
+                {
+                    if(reader.Read()) // Si j'arrive à lire au moins une ligne, c'est que notre artist est bien présent au moins une fois dans la M to M
+                    {
+                        isSinging = true;
+                    }
+                }
+
+                _DbConnection.Close();
+
+            }
+            return isSinging;
         }
     }
 }

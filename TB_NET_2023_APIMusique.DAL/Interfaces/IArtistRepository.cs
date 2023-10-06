@@ -5,5 +5,6 @@ namespace TB_NET_2023_APIMusique.DAL.Interfaces
 {
     public interface IArtistRepository : ICrud<int, Artist>
     {
+        public bool IsSingingOnTrack(int id);
     }
 }
