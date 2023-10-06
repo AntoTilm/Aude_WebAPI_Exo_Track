@@ -10,7 +10,7 @@ using TB_NET_2023_APIMusique.DAL.Interfaces;
 using System.Security.Cryptography;
 using TB_NET_2023_APIMusique.Tools.Utils;
 
-namespace TB_NET_2023_APIMusique.DAL
+namespace TB_NET_2023_APIMusique.DAL.Repositories
 {
     public class ArtistRepository : IArtistRepository
     {
@@ -54,7 +54,7 @@ namespace TB_NET_2023_APIMusique.DAL
             Artist? result = null;
             using (DbCommand command = _DbConnection.CreateCommand())
             {
-                command.CommandText = "SELECT * FROM [Artist] WHERE [Id_ARTISTE] = @id";
+                command.CommandText = "SELECT * FROM [Artist] WHERE [Id_ARTIST] = @id";
                 command.addParamWithValue("id", id);
                 _DbConnection.Open();
                 using (DbDataReader reader = command.ExecuteReader())
@@ -74,7 +74,7 @@ namespace TB_NET_2023_APIMusique.DAL
             Artist result;
             using (DbCommand command = _DbConnection.CreateCommand())
             {
-                command.CommandText = "INSERT INTO [ARTIST] ([NAME],[BIRTH_DATE],[DEATH_DATE]) " +
+                command.CommandText = "INSERT INTO [Artist] ([NAME],[BIRTH_DATE],[DEATH_DATE]) " +
                                       "VALUES (@name,@birthdate,@deathdate)";
                 command.addParamWithValue("name", artist.Name);
                 command.addParamWithValue("birthdate", artist.Birthdate);
@@ -99,10 +99,10 @@ namespace TB_NET_2023_APIMusique.DAL
             {
                 command.CommandText =
                     "UPDATE FROM [Artist]" +
-                    " SET [Name] = @name," +
+                    " SET [NAME] = @name," +
                     "     [BIRTH_DATE] = @birthdate" +
                     "     [DEATH_DATE] = @deathdate" +
-                    " WHERE [Id] = @id";
+                    " WHERE [Id_ARTIST] = @id";
                 command.addParamWithValue("name", artist.Name);
                 command.addParamWithValue("birthdate", artist.Birthdate);
                 command.addParamWithValue("deathdate", artist.Deathdate);
@@ -118,7 +118,7 @@ namespace TB_NET_2023_APIMusique.DAL
         {
             using (DbCommand command = _DbConnection.CreateCommand())
             {
-                command.CommandText = "DELETE FROM [Artist] WHERE [Id_ARTISTE] = @id";
+                command.CommandText = "DELETE FROM [Artist] WHERE [Id_ARTIST] = @id";
                 command.addParamWithValue("id", id);
                 _DbConnection.Open();
                 int nbRowDeleted = command.ExecuteNonQuery();
