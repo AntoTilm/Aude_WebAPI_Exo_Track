@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\TB_NET_2023_APIMusique.BLL\TB_NET_2023_APIMusique.BLL.csproj" />
   </ItemGroup>
 
 </Project>

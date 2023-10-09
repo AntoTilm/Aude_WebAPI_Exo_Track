@@ -74,6 +74,7 @@ namespace TB_NET_2023_APIMusique.DAL.Repositories
             using (DbCommand command = _DbConnection.CreateCommand())
             {
                 command.CommandText = "INSERT INTO [Artist] ([NAME],[BIRTH_DATE],[DEATH_DATE]) " +
+                                      " OUTPUT INSERTED.* " +
                                       "VALUES (@name,@birthdate,@deathdate)";
                 command.addParamWithValue("name", artist.Name);
                 command.addParamWithValue("birthdate", artist.Birthdate);
@@ -81,7 +82,8 @@ namespace TB_NET_2023_APIMusique.DAL.Repositories
                 _DbConnection.Open();
                 using (DbDataReader reader = command.ExecuteReader())
                 {
-                    if (reader.Read())
+                    // TODO : Ca aurait été bien de gérer l'erreur de nom déjà pris vu que vous avez mis une contrainte unique dessus
+                    if (!reader.Read())
                     {
                         throw new Exception("Erreur lors de l'ajout de l'artiste");
                     }
@@ -97,9 +99,9 @@ namespace TB_NET_2023_APIMusique.DAL.Repositories
             using (DbCommand command = _DbConnection.CreateCommand())
             {
                 command.CommandText =
-                    "UPDATE FROM [Artist]" +
+                    "UPDATE [Artist]" +
                     " SET [NAME] = @name," +
-                    "     [BIRTH_DATE] = @birthdate" +
+                    "     [BIRTH_DATE] = @birthdate," +
                     "     [DEATH_DATE] = @deathdate" +
                     " WHERE [Id_ARTIST] = @id";
                 command.addParamWithValue("name", artist.Name);
