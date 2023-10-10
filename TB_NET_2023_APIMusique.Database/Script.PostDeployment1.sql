@@ -25,6 +25,6 @@ VALUES ('Medine','1991-03-27',null),
        ('C''etait un appel à l''aide','1991-03-27',null)
 
 INSERT INTO TRACK_ARTIST
-VALUES (1,1),
-       (2,2),
-       (3,3)
+VALUES (1,1,0),
+       (2,2,0),
+       (3,3,0)
