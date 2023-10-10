@@ -17,9 +17,11 @@ builder.Services.AddTransient<DbConnection>(service =>
 
 //Services
 builder.Services.AddScoped<IArtistService, ArtistService>();
+builder.Services.AddScoped<ITrackService, TrackService>();
 
 //Repositories
 builder.Services.AddScoped<IArtistRepository, ArtistRepository>();
+builder.Services.AddScoped<ITrackRepository, TrackRepository>();
 
 
 builder.Services.AddControllers();

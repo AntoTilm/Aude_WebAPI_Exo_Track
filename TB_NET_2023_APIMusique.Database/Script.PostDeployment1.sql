@@ -27,4 +27,5 @@ VALUES ('Medine','1991-03-27',null),
 INSERT INTO TRACK_ARTIST
 VALUES (1,1,0),
        (2,2,0),
+       (2,3,1),
        (3,3,0)
